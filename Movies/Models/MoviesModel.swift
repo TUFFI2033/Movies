@@ -8,21 +8,18 @@
 import Foundation
 
 struct MoviesModel: Decodable {
-    let title: String
-    let released: String
-    let runtime: String
-    let genre: String
-    let language: String
-    let country: String
-    let poster: String
+    let results: [Result]
     
-    enum CodingKeys: String, CodingKey {
-        case title = "Title"
-        case released = "Released"
-        case runtime = "Runtime"
-        case genre = "Genre"
-        case language = "Language"
-        case country = "Country"
-        case poster = "Poster"
+    struct Result: Decodable {
+        let title: String
+        let releaseDate: String
+        let overview: String
+        let backdropPath: String
+
+        enum CodingKeys: String, CodingKey {
+            case title, overview
+            case releaseDate = "release_date"
+            case backdropPath = "backdrop_path"
+        }
     }
 }

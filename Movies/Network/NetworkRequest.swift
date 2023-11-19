@@ -13,11 +13,10 @@ class NetworkRequest {
     private init() {}
     
     func requestData(search: String, completion: @escaping (Result<Data, Error>) -> Void) {
-        let key = "586a611f"
-        var urlComponents = URLComponents(string: "https://www.omdbapi.com/")!
+        let key = "ae58e27dd4501279de6faa4f89203bb1"
+        var urlComponents = URLComponents(string: "https://api.themoviedb.org/3/discover/movie")!
                urlComponents.queryItems = [
-                   URLQueryItem(name: "apikey", value: key),
-                   URLQueryItem(name: "t", value: search)
+                   URLQueryItem(name: "api_key", value: key)
                ]
         
         guard let url = urlComponents.url else { return }

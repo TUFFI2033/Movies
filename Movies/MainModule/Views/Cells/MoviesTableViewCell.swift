@@ -9,7 +9,7 @@ import UIKit
 
 class MoviesTableViewCell: UITableViewCell {
     
-    static let idCalendarCell = "idCalendarCell"
+    static let reuseIdentifier = "MoviesTableViewCell"
     
     private let selectBackgroundView = UIView()
     
@@ -47,20 +47,17 @@ class MoviesTableViewCell: UITableViewCell {
         selectBackgroundView.backgroundColor = .specialRed
         selectBackgroundView.layer.cornerRadius = 25
         selectedBackgroundView = selectBackgroundView
+        nameMoviesLabel.numberOfLines = 3
         descriptionMoviesLabel.numberOfLines = 0
         
         addSubview(moviesImage)
         addSubview(stackLabel)
     }
     
-    func updateLabels(model: MoviesModel) {
-        nameMoviesLabel.text = model.title
-        descriptionMoviesLabel.text = """
-Released: \(model.released)
-Country: \(model.country)
-Genre: \(model.genre)
-Time: \(model.runtime)
-"""
+    func updateLabels(model: [MoviesModel.Result], indexPath: IndexPath) {
+        let movie = model[indexPath.row]
+        nameMoviesLabel.text = movie.title
+        descriptionMoviesLabel.text = "Release: \(movie.releaseDate)"
     }
 }
 

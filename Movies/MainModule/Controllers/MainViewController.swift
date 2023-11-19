@@ -16,8 +16,7 @@ class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        getMovies()
-    }
+        getMovies()    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,28 +36,28 @@ class MainViewController: UIViewController {
     }
     
     func getMovies() {
-            NetworkDataFetch.shared.fetchMovies { [weak self] result, error in
-                guard let self = self else { return }
-
-                if let model = result {
-                    print(model)
-                    moviesTableView.moviesData = [model]
-                    DispatchQueue.main.async {
-                        self.moviesTableView.reloadData()
-                    }
-                }
-
-                if let error {
-                    print(error)
+        NetworkDataFetch.shared.fetchMovies { [weak self] result, error in
+            guard let self = self else { return }
+            
+            if let model = result {
+                moviesTableView.moviesData = model.results
+                DispatchQueue.main.async {
+                    self.moviesTableView.reloadData()
                 }
             }
+            
+            if let error {
+                print(error)
+            }
         }
+    }
 }
 
 //MARK: UITableViewDelegate
 
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         let moviesVC = MoviesViewController()
         moviesVC.modalPresentationStyle = .fullScreen
         present(moviesVC, animated: true)

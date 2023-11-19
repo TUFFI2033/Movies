@@ -9,14 +9,14 @@ import UIKit
 
 class MoviesTableView: UITableView {
     
-    var moviesData: [MoviesModel] = []
+    var moviesData: [MoviesModel.Result] = []
     
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
         
         configure()
         setDelegate()
-        register(MoviesTableViewCell.self, forCellReuseIdentifier: MoviesTableViewCell.idCalendarCell)
+        register(MoviesTableViewCell.self, forCellReuseIdentifier: MoviesTableViewCell.reuseIdentifier)
     }
     
     required init?(coder: NSCoder) {
@@ -39,17 +39,15 @@ class MoviesTableView: UITableView {
 
 extension MoviesTableView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        moviesData.count
+        return moviesData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: MoviesTableViewCell.idCalendarCell, for: indexPath) as? MoviesTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: MoviesTableViewCell.reuseIdentifier, for: indexPath) as? MoviesTableViewCell else {
             return UITableViewCell()
         }
         
-        let movieModel = moviesData[indexPath.row]
-        cell.updateLabels(model: movieModel)
-        
+        cell.updateLabels(model: moviesData, indexPath: indexPath)
         return cell
     }
 }

@@ -9,14 +9,14 @@ import UIKit
 
 class DescriptionView: UIView {
     
-    private let moviesNameLabel = UILabel(text: "Thor: Love and Thunder", font: .robotoBold28())
+    private let moviesNameLabel = UILabel(text: "Title", font: .robotoBold28())
     
     private let yearView = UIView()
     private let yearLabel = UILabel(text: "Year", font: .robotoBold14())
     private let genreView = UIView()
     private let genreLabel = UILabel(text: "Genre", font: .robotoBold14())
     private let timeView = UIView()
-    private let timeLabel = UILabel(text: "2h 32m", font: .robotoBold14())
+    private let timeLabel = UILabel(text: "0h 00m", font: .robotoBold14())
     
     private lazy var stackView = UIStackView(arrangedSubviews: [yearView, genreView, timeView], axis: .horizontal, spacing: 10)
     
@@ -91,5 +91,11 @@ Thor's retirement is interrupted by a galactic killer known as Gorr the God Butc
             descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
             descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
         ])
+    }
+    
+    func updateLabels(model: [MoviesModel.Result]) {
+        let movie = model[0]
+        moviesNameLabel.text = movie.title
+        yearLabel.text = "Release: \(movie.releaseDate)"
     }
 }

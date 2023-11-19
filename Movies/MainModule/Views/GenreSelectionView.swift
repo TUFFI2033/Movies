@@ -11,7 +11,7 @@ class GenreSelectionView: UIView {
     
     private let scrollView = UIScrollView()
     
-    private let newReleasesButton = UIButton(text: "New Releases", font: .robotoBold14(), backgroundColor: .specialRed)
+    private let newReleasesButton = UIButton(text: "Popular", font: .robotoBold14(), backgroundColor: .specialRed)
     private let moviesButton = UIButton(text: "Movies", font: .robotoBold14())
     private let tvSeriesButton = UIButton(text: "TV series", font: .robotoBold14())
     private let cartoonsButton = UIButton(text: "Cartoons", font: .robotoBold14())
