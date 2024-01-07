@@ -14,12 +14,15 @@ struct MoviesModel: Decodable {
         let title: String
         let releaseDate: String
         let overview: String
-        let backdropPath: String
+        let id: Int
+        let posterPath: String
+        let voteAverage: Double
 
         enum CodingKeys: String, CodingKey {
-            case title, overview
+            case title, overview, id
             case releaseDate = "release_date"
-            case backdropPath = "backdrop_path"
+            case posterPath = "poster_path"
+            case voteAverage = "vote_average"
         }
     }
 }

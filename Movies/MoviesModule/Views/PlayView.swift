@@ -23,7 +23,6 @@ class PlayView: UIView {
     
     private let moviesImage: UIImageView = {
         let img = UIImageView()
-        img.image = UIImage(named: "thor")
         img.contentMode = .scaleAspectFill
         img.translatesAutoresizingMaskIntoConstraints = false
         return img

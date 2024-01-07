@@ -12,11 +12,12 @@ class MainViewController: UIViewController {
     private let logoView = LogoView()
     private let genreSelectionView = GenreSelectionView()
     private let moviesTableView = MoviesTableView()
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        getMovies()    }
+        getMovies()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +25,7 @@ class MainViewController: UIViewController {
         setupViews()
         setConstraints()
     }
-
+    
     private func setupViews() {
         view.backgroundColor = .specialBackground
         
@@ -41,8 +42,22 @@ class MainViewController: UIViewController {
             
             if let model = result {
                 moviesTableView.moviesData = model.results
+                
+                let visibleIndexPaths = self.moviesTableView.indexPathsForVisibleRows
+                for indexPath in visibleIndexPaths ?? [] {
+                    NetworkImageRequest.shared.requestData(poster: model.results[indexPath.row].posterPath) { result in
+                        switch result {
+                        case .success(let data):
+                            self.moviesTableView.updateImage(data: data, at: indexPath)
+                            print(data)
+                        case .failure(let error):
+                            print(error.localizedDescription)
+                        }
+                    }
+                }
+                
                 DispatchQueue.main.async {
-                    self.moviesTableView.reloadData()
+                    self.moviesTableView.reloadData()               
                 }
             }
             

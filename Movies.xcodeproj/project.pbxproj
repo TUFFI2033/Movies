@@ -34,6 +34,7 @@
 		DDCD99DD2B012AFA00870A66 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCD99DC2B012AFA00870A66 /* LogoView.swift */; };
 		DDCD99DF2B012C5300870A66 /* UILabel + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCD99DE2B012C5300870A66 /* UILabel + Extensions.swift */; };
 		DDCD99E12B012C9D00870A66 /* UIStackView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCD99E02B012C9D00870A66 /* UIStackView + Extensions.swift */; };
+		DDFCA06A2B1D1D8300F93F27 /* NetworkImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFCA0692B1D1D8300F93F27 /* NetworkImageRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		DDCD99DC2B012AFA00870A66 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		DDCD99DE2B012C5300870A66 /* UILabel + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extensions.swift"; sourceTree = "<group>"; };
 		DDCD99E02B012C9D00870A66 /* UIStackView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extensions.swift"; sourceTree = "<group>"; };
+		DDFCA0692B1D1D8300F93F27 /* NetworkImageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkImageRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				DD117A172B0A304F008A3CB7 /* NetworkRequest.swift */,
+				DDFCA0692B1D1D8300F93F27 /* NetworkImageRequest.swift */,
 				DD117A192B0A33E7008A3CB7 /* NetworkDataFetch.swift */,
 			);
 			path = Network;
@@ -372,6 +375,7 @@
 			files = (
 				DDCD99D62B0129A800870A66 /* UIFont + Extensions.swift in Sources */,
 				DDB78DA42B0981A00006976B /* PlayView.swift in Sources */,
+				DDFCA06A2B1D1D8300F93F27 /* NetworkImageRequest.swift in Sources */,
 				DDB78DA12B091D840006976B /* MoviesTableViewCell.swift in Sources */,
 				DDCD99E12B012C9D00870A66 /* UIStackView + Extensions.swift in Sources */,
 				DDCD99CF2B0124BE00870A66 /* MainTapBarController.swift in Sources */,

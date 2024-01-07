@@ -15,7 +15,7 @@ class MoviesTableViewCell: UITableViewCell {
     
     private let moviesImage: UIImageView = {
         let img = UIImageView()
-        img.image = UIImage(named: "joker")
+        img.image = UIImage(named: "question")
         img.contentMode = .scaleAspectFill
         img.clipsToBounds = true
         img.layer.cornerRadius = 20
@@ -58,6 +58,10 @@ class MoviesTableViewCell: UITableViewCell {
         let movie = model[indexPath.row]
         nameMoviesLabel.text = movie.title
         descriptionMoviesLabel.text = "Release: \(movie.releaseDate)"
+    }
+    
+    func updateImage(data: Data) {
+        moviesImage.image = UIImage(data: data)
     }
 }
 

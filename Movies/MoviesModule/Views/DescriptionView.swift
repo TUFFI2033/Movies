@@ -20,13 +20,7 @@ class DescriptionView: UIView {
     
     private lazy var stackView = UIStackView(arrangedSubviews: [yearView, genreView, timeView], axis: .horizontal, spacing: 10)
     
-    private let descriptionLabel = UILabel(text: """
-Thor's retirement is interrupted by a galactic killer known as Gorr the God Butcher, who seeks the extinction of the gods. To combat the threat, Thor enlists the help of King Valkyrie, Korg and ex-girlfriend Jane Foster, who - to Thor's surprise - inexplicably wields his magical hammer, Mjolnir, as the Mighty Thor. Together, they embark upon a harrowing cosmic adventure to uncover the mystery of the God Butcher's vengeance and stop him before it's too late.
-
-Thor's retirement is interrupted by a galactic killer known as Gorr the God Butcher, who seeks the extinction of the gods. To combat the threat, Thor enlists the help of King Valkyrie, Korg and ex-girlfriend Jane Foster, who - to Thor's surprise - inexplicably wields his magical hammer, Mjolnir, as the Mighty Thor. Together, they embark upon a harrowing cosmic adventure to uncover the mystery of the God Butcher's vengeance and stop him before it's too late.
-
-Thor's retirement is interrupted by a galactic killer known as Gorr the God Butcher, who seeks the extinction of the gods. To combat the threat, Thor enlists the help of King Valkyrie, Korg and ex-girlfriend Jane Foster, who - to.
-""", font: .robotoMedium12(), textColor: .specialGray)
+    private let descriptionLabel = UILabel(font: .robotoMedium12(), textColor: .specialGray)
     
     override init(frame: CGRect) {
         super.init(frame: frame)

@@ -33,6 +33,14 @@ class MoviesTableView: UITableView {
         delegate = self
         dataSource = self
     }
+    
+    func updateImage(data: Data, at indexPath: IndexPath) {
+        guard let cell = cellForRow(at: indexPath) as? MoviesTableViewCell else {
+            return
+        }
+        
+        cell.updateImage(data: data)
+    }
 }
 
 //MARK: UITableViewDataSource
